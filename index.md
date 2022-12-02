@@ -1,4 +1,4 @@
 ---
-title: Welcome to my blog
+title: houghts on math and computer science
 ---
 
