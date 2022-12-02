@@ -1,4 +1,4 @@
 ---
-title: houghts on math and computer science
+title: Thoughts on math and computer science
 ---
 
