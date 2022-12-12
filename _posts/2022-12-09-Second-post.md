@@ -51,7 +51,7 @@ apt install python3.10
 apt install nano
 ```
 This gives us the following nice little terminal-based gui to write out Python in:
-![Picture of nano](09-12-2022/nano.png)
+![Picture of nano](./09-12-2022/nano.png)
 
 Let us edit our Python files a bit so one of them writes to a file and the other one reads from the file and prints to screen - as promised.
 
