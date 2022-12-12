@@ -1,4 +1,4 @@
 ---
-title: Welcome to my blog
+title: Thoughts on math and computer science
 ---
 
