@@ -52,7 +52,7 @@ apt install nano
 ```
 This gives us the following nice little terminal-based gui to write out Python in:
 
-![Picture of nano](/_posts/09-12-2022/nano.png)
+![Picture of nano](/_assets/09-12-2022/nano.png)
 
 Let us edit our Python files a bit so one of them writes to a file and the other one reads from the file and prints to screen - as promised.
 
@@ -172,6 +172,7 @@ root@b64221f4b7be:/home/python# jobs
 This will all work as expected however we do note that apparently the reader now has a different parent process. Also we note that when we list the jobs started from our current terminal we no longer get our reader-process listed. Last curious detail that should be mentioned; if we write `python3.10 reader.py & > /dev/pts/3` instead of `(python3.10 reader.py &) > /dev/pts/3`, the command will not work, presumably since `&>` has a different meaning in bash, and `& >` will be interpreted as such.
 
 Let us end with a bit of clean-up of the many bash-processes floating around by now.
+
 ```
 root@b64221f4b7be:/home/python# ps -f -A
 UID        PID  PPID  C STIME TTY          TIME CMD
