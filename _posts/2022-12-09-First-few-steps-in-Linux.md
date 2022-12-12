@@ -3,8 +3,6 @@ title: "First few steps in Linux"
 date: 2022-12-09
 ---
 
-## First few steps in Linux
-
 At my previous job I got exposed to Docker for the first time in my professional carreer. The idea of having something similar to a tiny virtual machine running on your local machine, and being able to setup rebuild the container from the operating system and up using a simple Dockerfile of assorted shell-commands appeals to me a lot. As a consequence of my exposure to Docker, I have also recently started playing around with Ubunt and Linux in general. So far this is mainly
 on the level of getting acquainted with the tooling and playing around, burt I figured this could be as good a occasion as any to start a bit of blogging. Whether this will be a one off, or the beginning of a 'adventures in Linux'-thread time will tell.
 
