@@ -1,5 +1,5 @@
 ---
-title: "Second post"
+title: "First few steps in Linux"
 date: 2022-12-09
 ---
 
