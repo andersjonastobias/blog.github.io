@@ -53,7 +53,7 @@ apt install nano
 This gives us the following nice little terminal-based gui to write out Python in:
 
 
-![]({{ site.url }}/_assets/09-12-2022/nano.png)
+![](/blog.github.io/assets/img/nano.png)
 
 Let us edit our Python files a bit so one of them writes to a file and the other one reads from the file and prints to screen - as promised.
 
@@ -226,6 +226,6 @@ root         9     0  0 Dec08 pts/1    00:00:00 /bin/bash
 root      4097     0  0 Dec08 pts/2    00:00:00 /bin/bash
 root      4415     9  0 20:39 pts/1    00:00:00 bash
 root      4418  4415  0 20:39 pts/1    00:00:00 ps -f -A
-```s
+```
 
 Bemærk at de forskellige bash-kommandoer kan dræbes med kill-kommandoer, pånær den øverste, der åbenbart vil stoppe containeren hvis den dræbes. 
