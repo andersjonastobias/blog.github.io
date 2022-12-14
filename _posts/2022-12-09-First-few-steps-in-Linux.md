@@ -1,6 +1,8 @@
 ---
 title: "First few steps in Linux"
 date: 2022-12-09
+tags: [Linux, bash]
+comments: 
 ---
 
 At my previous job, I got exposed to Docker for the first time in my professional career. The idea of having something similar to a tiny virtual machine running on your local machine, and being able to rebuild the container from the operating system and up using a simple Dockerfile of assorted shell-commands appeals to me a lot. As a consequence of my exposure to Docker, I have also recently started playing around with Ubuntu and Linux in general. So far this is mainly
