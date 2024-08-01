@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Pipes and processes"
 date: 2023-02-01
 tags: [Python, Linux, bash]
