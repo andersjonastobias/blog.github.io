@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Pipes and processes"
+comments_id: 4
 date: 2023-02-01
 tags: [Python, Linux, bash]
 comments: 

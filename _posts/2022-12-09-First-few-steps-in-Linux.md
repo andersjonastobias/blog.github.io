@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "First few steps in Linux"
+comments_id: 3
 date: 2022-12-09
 tags: [Linux, bash]
 comments: 

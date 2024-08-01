@@ -1,0 +1,91 @@
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    const GH_API_URL = 'https://api.github.com/repos/andersjonastobias/blog.github.io/issues/{{ page.comments_id }}/comments';
+    
+    let request = new XMLHttpRequest();
+    request.open( 'GET', GH_API_URL, true );
+    request.onload = function() {
+        if ( this.status >= 200 && this.status < 400 ) {
+            let response = JSON.parse( this.response );
+    
+            for ( var i = 0; i < response.length; i++ ) {
+                document.getElementById( 'gh-comments-list' ).appendChild( createCommentEl( response[ i ] ) );
+            }
+    
+            if ( 0 === response.length ) {
+                document.getElementById( 'no-comments-found' ).style.display = 'block';
+            }
+        } else {
+            console.error( this );
+        }
+    };
+    
+    function createCommentEl(response) {
+    // Create user link element
+    let user = document.createElement('a');
+    user.setAttribute('href', response.user.url.replace('api.github.com/users', 'github.com'));
+    user.classList.add('user');
+    
+    // Create user avatar image element
+    let userAvatar = document.createElement('img');
+    userAvatar.classList.add('avatar');
+    userAvatar.setAttribute('src', response.user.avatar_url);
+    
+    // Set width and height directly on the userAvatar element
+    userAvatar.style.width = '1.5em';
+    userAvatar.style.height = '1.5em';
+    
+    // Create a span for the user name
+    let userName = document.createElement('span');
+    userName.classList.add('user-name');
+    userName.textContent = response.user.login; // Assuming `login` is the user's name
+    
+    // Append userAvatar and userName to user
+    user.appendChild(userAvatar);
+    user.appendChild(userName);
+    
+    // Create comment link element
+    let commentLink = document.createElement('a');
+    commentLink.setAttribute('href', response.html_url);
+    commentLink.classList.add('comment-url');
+    commentLink.innerHTML = '#' + response.id + ' - ' + response.created_at;
+    
+    // Create comment content element
+    let commentContents = document.createElement('div');
+    commentContents.classList.add('comment-content');
+    commentContents.innerHTML = response.body; // marked(response.body); // Uncomment if using a markdown library
+    
+    // Create comment list item element
+    let comment = document.createElement('li');
+    comment.setAttribute('data-created', response.created_at);
+    comment.setAttribute('data-author-avatar', response.user.avatar_url);
+    comment.setAttribute('data-user-url', response.user.url);
+    
+    // Append elements to the comment
+    comment.appendChild(user);
+    comment.appendChild(commentContents);
+    comment.appendChild(commentLink);
+    
+    return comment;
+}
+
+    request.send();
+    </script>
+    
+    <hr>
+    
+    <div class="github-comments">
+        <style>/* Should be moved to a proper css file*/
+            ul {
+                padding: 0; /* Remove default padding from <ul> */
+                list-style-type: none; /* Remove default list bullets */
+            }
+            ul li {
+                margin-bottom: 30px; /* Space between list items */
+            }
+        </style>
+        <p id="leave-a-comment">Comments</p>
+        <ul style="padding: 1.5em 0;" id="gh-comments-list"></ul>
+    <!-- Include this when you include the css   <p id="no-comments-found">No comments found for this article.</p> -->
+        <p id="leave-a-comment">Join the discussion for this article by commenting in <a href="https://github.com/andersjonastobias/blog.github.io/issues/{{ page.comments_id }}" ><u>this ticket</u></a>. Comments appear on this page instantly.</p>
+    </div>

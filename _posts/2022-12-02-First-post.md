@@ -1,5 +1,6 @@
 ---
 layout: post
+comments_id: 2
 title: "First post"
 date: 2022-12-02
 ---
